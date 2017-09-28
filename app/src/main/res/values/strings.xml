@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Todo</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+    <string name="todo_list">Todo list!</string>
+    <string name="todo_list_view">Todo list!</string>
+
+    <string-array name="todo">
+        <item>Wake up</item>
+        <item>Drink Coffee</item>
+        <item>Make at least one person laugh</item>
+        <item>Plant a tree</item>
+        <item>Go to sleep</item>
+    </string-array>
+
+</resources>
