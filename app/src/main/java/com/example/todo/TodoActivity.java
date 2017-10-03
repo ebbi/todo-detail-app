@@ -12,16 +12,37 @@ public class TodoActivity extends AppCompatActivity {
     private String[] mTodos;
     private int mTodoIndex = 0;
 
+    /*
+       In case of state change, due to rotating the phone
+       store the mTodoIndex to display the same mTodos element post state change
+       N.B. small amounts of data, typically IDs can be stored as key, value pairs in a Bundle
+       the alternative is to abstract view data to a ViewModel which can be in scope in all
+       Activity states and more suitable for larger amounts of data
+    */
+    private static final String TODO_INDEX = "todo_index";
+    // override to write the value of mTodoIndex into the Bundle with TODO_INDEX as its key
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(TODO_INDEX, mTodoIndex);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // call the super class onCreate to complete the creation of activity like
-        // the view hierarchy
+        // call the super class onCreate to complete the creation of Activity
+        // like the view hierarchy
         super.onCreate(savedInstanceState);
 
         // set the user interface layout for this Activity
         // the layout file is defined in the project res/layout/activity_todo.xml file
         setContentView(R.layout.activity_todo);
+
+        // check for saved state due to changes such as rotation or back button
+        // and restore any saved state such as the todo index
+        if (savedInstanceState != null){
+            mTodoIndex = savedInstanceState.getInt(TODO_INDEX, 0);
+        }
 
         // initialize member TextView so we can manipulate it later
         final TextView TodoTextView;
@@ -40,7 +61,7 @@ public class TodoActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mTodoIndex += 1;
+                mTodoIndex = (mTodoIndex + 1) % mTodos.length;
                 TodoTextView.setText(mTodos[mTodoIndex]);
             }
         });
