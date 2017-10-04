@@ -4,6 +4,7 @@
     <string name="next">Next</string>
     <string name="prev">Prev</string>
     <string name="todo_list_view">Todo list!</string>
+    <string name="textViewTodoDetail">TextViewTodoDetail</string>
 
     <string-array name="todo">
         <item>Wake up</item>

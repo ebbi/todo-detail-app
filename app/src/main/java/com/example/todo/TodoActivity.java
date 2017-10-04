@@ -1,5 +1,6 @@
 package com.example.todo;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -49,7 +50,7 @@ public class TodoActivity extends AppCompatActivity {
 
         // initialize member TextView so we can manipulate it later
         final TextView TodoTextView;
-        TodoTextView = (TextView) findViewById(R.id.textViewTodo);
+        TodoTextView = (TextView) findViewById(R.id.textViewTodoDetail);
 
         // read the todo array from res/values/strings.xml
         Resources res = getResources();
@@ -66,6 +67,15 @@ public class TodoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mTodoIndex = (mTodoIndex + 1) % mTodos.length;
                 TodoTextView.setText(mTodos[mTodoIndex]);
+            }
+        });
+
+        Button buttonTodoDetail = (Button)findViewById(R.id.buttonTodoDetail);
+        buttonTodoDetail.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = TodoDetailActivity.newIntent(TodoActivity.this, mTodoIndex);
+                startActivity(intent);
             }
         });
 

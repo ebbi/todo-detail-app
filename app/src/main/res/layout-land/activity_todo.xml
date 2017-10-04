@@ -8,7 +8,7 @@
     tools:context="com.example.todo.TodoActivity">
 
     <TextView
-        android:id="@+id/textViewTodo"
+        android:id="@+id/textViewTodoDetail"
         android:layout_width="330dp"
         android:layout_height="336dp"
         android:layout_marginBottom="16dp"
