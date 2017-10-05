@@ -21,7 +21,7 @@ public class TodoActivity extends AppCompatActivity {
     // N.B. small amounts of data, typically IDs can be stored as key, value pairs in a Bundle
     // the alternative is to abstract view data to a ViewModel which can be in scope in all
     // Activity states and more suitable for larger amounts of data
-    private static final String TODO_INDEX = "todo_index";
+    private static final String TODO_INDEX = "com.example.todoIndex";
     // override to write the value of mTodoIndex into the Bundle with TODO_INDEX as its key
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class TodoActivity extends AppCompatActivity {
 
         // initialize member TextView so we can manipulate it later
         final TextView TodoTextView;
-        TodoTextView = (TextView) findViewById(R.id.textViewTodoDetail);
+        TodoTextView = (TextView) findViewById(R.id.textViewTodo);
 
         // read the todo array from res/values/strings.xml
         Resources res = getResources();
@@ -58,8 +58,7 @@ public class TodoActivity extends AppCompatActivity {
         // display the first task from mTodo array in the TodoTextView
         TodoTextView.setText(mTodos[mTodoIndex]);
 
-        Button buttonNext;
-        buttonNext = (Button) findViewById(R.id.buttonNext);
+        Button buttonNext = (Button) findViewById(R.id.buttonNext);
 
         // OnClick listener for the  Next button
         buttonNext.setOnClickListener(new View.OnClickListener(){
@@ -70,7 +69,8 @@ public class TodoActivity extends AppCompatActivity {
             }
         });
 
-        Button buttonTodoDetail = (Button)findViewById(R.id.buttonTodoDetail);
+        Button buttonTodoDetail = (Button) findViewById(R.id.buttonTodoDetail);
+
         buttonTodoDetail.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
