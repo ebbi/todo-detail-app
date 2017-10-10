@@ -5,6 +5,12 @@
     <string name="prev">Prev</string>
     <string name="todo_list_view">Todo list!</string>
     <string name="textViewTodoDetail">TextViewTodoDetail</string>
+    <string name="todo_complete">Todo Complete?</string>
+    <string name="textViewIntentData">Data from intent</string>
+    <string name="detail">Detail</string>
+    <string name="buttonTodoDetailText">detail</string>
+    <string name="request_code_mismatch">requestCode in intent does not match the parent requestCode</string>
+    <string name="back_button_pressed">Back button pressed</string>
 
     <string-array name="todo">
         <item>Wake up</item>
@@ -12,6 +18,13 @@
         <item>Make at least one person laugh</item>
         <item>Plant a tree</item>
         <item>Go to sleep</item>
+    </string-array>
+    <string-array name="todo_detail">
+        <item>Wake up is generally not a pleasant activity but it does happen once a day!</item>
+        <item>Caffeine consumption is not a todo, it happens naturally.  </item>
+        <item>Follow up the RFC for humour and JokeML</item>
+        <item>Today, I planted 2 trees, really! see here: https://www.ecosia.org/</item>
+        <item>At least 6 hours is compulsory; drink milky coffee. </item>
     </string-array>
 
 </resources>

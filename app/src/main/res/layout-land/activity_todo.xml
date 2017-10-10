@@ -8,23 +8,44 @@
     tools:context="com.example.todo.TodoActivity">
 
     <TextView
-        android:id="@+id/textViewTodo"
-        android:layout_width="330dp"
-        android:layout_height="336dp"
+        android:id="@+id/textViewIntent"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
+        android:background="#ccc"
+        android:text="@string/textViewIntentData"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTodoDetail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTodo"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteY="158dp"/>
+
+    <TextView
+        android:id="@+id/textViewTodo"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/holo_red_light"
         android:text="@string/todo_list_view"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502"
-        tools:layout_editor_absoluteY="76dp"/>
+        app:layout_constraintVertical_bias="0.0"/>
 
     <Button
         android:id="@+id/buttonPrev"
@@ -37,7 +58,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/buttonNext"/>
+        app:layout_constraintRight_toLeftOf="@+id/buttonNext"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="176dp"/>
 
     <Button
         android:id="@+id/buttonNext"
@@ -47,16 +70,19 @@
         android:layout_marginRight="16dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="43dp"/>
 
     <Button
         android:id="@+id/buttonTodoDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Detail"
+        android:text="@string/buttonTodoDetailText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
 
 </android.support.constraint.ConstraintLayout>
