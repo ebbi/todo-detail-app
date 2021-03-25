@@ -108,13 +108,14 @@ public class TodoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
 
         if (requestCode == IS_SUCCESS ){
-            if (intent != null) {
+            if (resultCode == RESULT_OK) {
                 // data in intent from child activity
                 boolean isTodoComplete = intent.getBooleanExtra(IS_TODO_COMPLETE, false);
                 updateTodoComplete(isTodoComplete);
             } else {
                 Toast.makeText(this, R.string.back_button_pressed, Toast.LENGTH_SHORT).show();
             }
+
         } else {
             Toast.makeText(this, R.string.request_code_mismatch,
                     Toast.LENGTH_SHORT).show();
